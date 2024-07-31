@@ -57,7 +57,7 @@ python3 manage.py migrate
 sudo tee $NGINX_CONF > /dev/null <<EOF
 server {
     listen 80;
-    server_name 167.71.236.11;
+    server_name 185.233.83.81;
 
     location = /favicon.ico { access_log off; log_not_found off; }
     location /static/ {
