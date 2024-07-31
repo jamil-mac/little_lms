@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0044cc;
+    color: #ffffff;
+}
+
+header .logo {
+    height: 100px;
+    margin-right: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.coin-info {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+}
+
+.coin-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.coin-item img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.coin-item p {
+    margin: 0;
+    font-size: 1em;
+}
+
+main {
+    padding: 20px;
+}
+
+.student-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.student-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+}
+
+.student-item:hover {
+    background-color: #f9f9f9;
+}
+
+.student-photo {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.student-info h2 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.student-details {
+    display: none;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.student-details.show {
+    display: block;
+}
+
+.coins {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.coin-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.coins img {
+    height: 24px;
+    width: auto;
+}
+
+.coin-label {
+    font-size: 0.9em;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+    .student-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .student-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .student-photo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .student-info h2 {
+        font-size: 1em;
+    }
+
+    .coins img {
+        height: 20px;
+    }
+
+    .coin-label {
+        font-size: 0.8em;
+    }
+}
