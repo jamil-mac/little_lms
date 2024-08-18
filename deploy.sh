@@ -40,7 +40,7 @@ After=network.target
 User=$USER
 Group=www-data
 WorkingDirectory=$PROJECT_ROOT
-ExecStart=$VENV_PATH/bin/gunicorn --access-logfile - --workers 3 --bind unix:$PROJECT_ROOT/$PROJECT_NAME.sock config.wsgi:application
+ExecStart=$VENV_PATH/bin/gunicorn --access-logfile - --workers 3 --bind unix:$PROJECT_ROOT/$PROJECT_NAME.sock $PROJECT_NAME.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
