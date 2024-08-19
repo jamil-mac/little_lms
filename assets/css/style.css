@@ -122,15 +122,69 @@ main {
     font-size: 0.9em;
 }
 
+.class-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    margin: 0;
+}
+
+.class-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.class-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.class-title {
+    margin: 0 0 15px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.details-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #0044cc;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.details-button:hover {
+    background-color: #002288;
+}
+
+
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
     .student-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .class-list {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 
 @media (max-width: 768px) {
     .student-list {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .class-list {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
 }
@@ -151,5 +205,9 @@ main {
 
     .coin-label {
         font-size: 0.8em;
+    }
+
+    .details-button {
+        padding: 8px 16px;
     }
 }
