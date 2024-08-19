@@ -38,46 +38,51 @@
         <p><strong>Активность на уроке (Бронза):</strong> Бронзовая монетка награждается за активное участие в
             обсуждениях и интерес к теме урока.</p>
     </div>
+    <div class="coin-item">
+        <img src="{% static 'image/iht_coin.png' %}" alt="IHT">
+        <p><strong>Дисциплина (IHL монета со стандартным логотипом школы)</strong>: Эта монетка выдаётся за соблюдение
+            дисциплины и правил поведения на уроках.</p>
+    </div>
 </section>
 <main>
-    <div class="student-list">
-        {% for student in students %}
-            <div class="student-item">
-                <img src="{{ student.photo.url }}" alt="{{ student.name }} {{ student.surname }}" class="student-photo">
-                <div class="student-info" onclick="toggleDetails('{{ student.id }}')">
-                    <h2>{{ student.surname }} {{ student.name }}</h2>
-                </div>
-                <div id="student-{{ student.id }}" class="student-details">
-                    <div class="coins">
-                        <div class="coin-item">
-                            <img src="{% static 'image/brilliant_coin.png' %}" alt="Бриллиант">
-                            <span class="coin-label">{{ student.brilliant_coin }}</span>
-                        </div>
-                        <div class="coin-item">
-                            <img src="{% static 'image/ruby_coin.png' %}" alt="Рубин">
-                            <span class="coin-label">{{ student.ruby_coin }}</span>
-                        </div>
-                        <div class="coin-item">
-                            <img src="{% static 'image/gold_coin.png' %}" alt="Золото">
-                            <span class="coin-label">{{ student.gold_coin }}</span>
-                        </div>
-                        <div class="coin-item">
-                            <img src="{% static 'image/silver_coin.png' %}" alt="Серебро">
-                            <span class="coin-label">{{ student.silver_coin }}</span>
-                        </div>
-                        <div class="coin-item">
-                            <img src="{% static 'image/bronze_coin.png' %}" alt="Бронза">
-                            <span class="coin-label">{{ student.bronze_coin }}</span>
-                        </div>
-                        <div class="coin-item">
-                            <img src="{% static 'image/iht_coin.png' %}" alt="IHT">
-                            <span class="coin-label">{{ student.iht_coin }}</span>
-                        </div>
+<div class="student-list">
+    {% for student in students %}
+        <div class="student-item {% if forloop.counter <= 4 %}top-student{% endif %}">
+            <img src="{{ student.photo.url }}" alt="{{ student.name }} {{ student.surname }}" class="student-photo">
+            <div class="student-info" onclick="toggleDetails('{{ student.id }}')">
+                <h2>{{ student.surname }} {{ student.name }}</h2>
+            </div>
+            <div id="student-{{ student.id }}" class="student-details">
+                <div class="coins">
+                    <div class="coin-item">
+                        <img src="{% static 'image/brilliant_coin.png' %}" alt="Бриллиант">
+                        <span class="coin-label">{{ student.brilliant_coin }}</span>
+                    </div>
+                    <div class="coin-item">
+                        <img src="{% static 'image/ruby_coin.png' %}" alt="Рубин">
+                        <span class="coin-label">{{ student.ruby_coin }}</span>
+                    </div>
+                    <div class="coin-item">
+                        <img src="{% static 'image/gold_coin.png' %}" alt="Золото">
+                        <span class="coin-label">{{ student.gold_coin }}</span>
+                    </div>
+                    <div class="coin-item">
+                        <img src="{% static 'image/silver_coin.png' %}" alt="Серебро">
+                        <span class="coin-label">{{ student.silver_coin }}</span>
+                    </div>
+                    <div class="coin-item">
+                        <img src="{% static 'image/bronze_coin.png' %}" alt="Бронза">
+                        <span class="coin-label">{{ student.bronze_coin }}</span>
+                    </div>
+                    <div class="coin-item">
+                        <img src="{% static 'image/iht_coin.png' %}" alt="IHT">
+                        <span class="coin-label">{{ student.iht_coin }}</span>
                     </div>
                 </div>
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
+</div>
 </main>
 <script>
     function toggleDetails(studentId) {

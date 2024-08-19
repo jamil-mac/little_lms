@@ -24,5 +24,16 @@ class StudentListView(DetailView):
 class AllStudents(ListView):
     model = StudentModel
     template_name = 'index.html'
-    queryset = StudentModel.objects.order_by('surname', 'name')
     context_object_name = 'students'
+
+    def get_queryset(self):
+        brilliant_student = StudentModel.objects.order_by('-brilliant_coin').first()
+        ruby_student = StudentModel.objects.order_by('-ruby_coin').first()
+        gold_student = StudentModel.objects.order_by('-gold_coin').first()
+        iht_student = StudentModel.objects.order_by('-iht_coin').first()
+
+        top_students = {brilliant_student, ruby_student, gold_student, iht_student}
+
+        other_students = StudentModel.objects.exclude(id__in=[s.id for s in top_students]).order_by('surname', 'name')
+
+        return list(top_students) + list(other_students)
