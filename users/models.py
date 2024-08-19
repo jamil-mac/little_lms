@@ -26,6 +26,7 @@ class StudentModel(models.Model):
     gold_coin = models.PositiveIntegerField(default=0)
     silver_coin = models.PositiveIntegerField(default=0)
     bronze_coin = models.PositiveIntegerField(default=0)
+    iht_coin = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return f'{self.name} {self.surname} {self.class_number.number}'
