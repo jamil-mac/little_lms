@@ -14,4 +14,4 @@ class ClassModelAdmin(admin.ModelAdmin):
 class StudentModelAdmin(admin.ModelAdmin):
     list_display = ['name', 'surname']
     search_fields = ['name', 'surname']
-    list_filter = ['name', 'surname']
+    list_filter = ['class_number']
